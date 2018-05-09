@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		{{> header}}
+	</head>
+		<body>
+			<div class="row">
+				<div class="col-md-6">
+					<br>
+					<h2>Update food</h2>
+				 <div class="field half first">
+					 <form method="post" action="update" >
+						 <div class="form-group">
+							 <label>Food name</label>
+							 <input class="form-control" placeholder="Enter food name" name="findFoodName">
+						 </div>
+						 <div class="form-group">
+							 <label>Quantity 1 = 100g, 0.5 = 50 g</label>
+							 <input class="form-control"  name="quantity">
+						 </div>
+						 <hr>
+						 <input type="submit" value="Add food" class="btn btn-secondary btn-lg" />
+					 </form>
+					 <br>
+					 <section class="get">
+						 <div class="">BMR: {{myBMR}}</div>
+						 <div class="">
+						 	Calories burned lifting: {{wlCal}}
+						 </div>
+						 <div class="">
+						 	Calories bunred w/ cardio: {{carCal}}
+						 </div>
+						 <div class="">Remaining Calories: {{rCal}}</div>
+						 <div class="">Calories in total: {{totalCalories}}</div>
+						 <div class="">Protein in total: {{totalProtein}}</div>
+						 <div class="">Carbs in total: {{totalCarbs}}</div>
+						 <div class="">Fat in total: {{totalFat}}</div>
+					 </section>
+				 </div>
+				</div>
+				<div class="col-md-6">
+					<div class="field half">
+						{{# each items }}
+							<div>
+								Food name: {{ this.name }}
+								Cals: {{ this.calories }}
+								Protein: {{ this.protein }}
+								Carbs: {{ this.carbs }}
+								Fat: {{ this.fat }}
+								Quantity: {{this.quantity}}
+							 </div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
